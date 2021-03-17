@@ -1,0 +1,17 @@
+{
+    "cid" : "",
+    "assets" : [],
+    "state" : "",
+    "details" : "",
+    "lgimage" : "",
+    "smimage" : "",
+    "lgtext" : "",
+    "smtext" : "",
+    "bttns" : {},
+    "timer" : {
+        "enabled" : false,
+        "time" : 0,
+        "lgimagelist" : [],
+        "smimagelist" : []
+    }
+}

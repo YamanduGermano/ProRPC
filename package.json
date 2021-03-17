@@ -1,0 +1,17 @@
+{
+  "name": "prorpc",
+  "version": "1.0.0",
+  "description": "Advanced Discord Rich Presence",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Yamandú Germano",
+  "license": "MIT",
+  "dependencies": {
+    "discord-rpc": "^3.2.0",
+    "http": "0.0.1-security",
+    "input": "^1.0.1",
+    "node-fetch": "^2.6.1"
+  }
+}
