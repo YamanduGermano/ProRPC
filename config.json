@@ -1,12 +1,12 @@
 {
     "cid" : "",
     "assets" : [],
-    "state" : "",
-    "details" : "",
-    "lgimage" : "",
-    "smimage" : "",
-    "lgtext" : "",
-    "smtext" : "",
+    "state" : "ProRPC",
+    "details" : "ProRPC",
+    "lgimage" : "ProRPC",
+    "smimage" : "ProRPC",
+    "lgtext" : "ProRPC",
+    "smtext" : "ProRPC",
     "bttns" : {},
     "timer" : {
         "enabled" : false,
