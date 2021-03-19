@@ -78,7 +78,7 @@ function run(){
                     small_image : cfg.smimage,
                     small_text: cfg.smtext
                 },
-                buttons : cfg.links
+                buttons : cfg.bttns
             }
         })
     })
