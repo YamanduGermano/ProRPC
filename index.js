@@ -4,6 +4,7 @@ const fetch = require('node-fetch')
 const input = require('input')
 var cfg = require('./config.json')
 const { hrtime } = require('process')
+const { Console } = require('console')
 
 
 //Command Line Interface Functions
@@ -103,34 +104,37 @@ async function breakrpc(){
 
 async function settings(){
     console.clear()
-    let selection = await input.select(" \nSETTINGS\n \n \nChoose one of the options below:",[{name:'CHANGE TEXTS', value: 1}, {name:'CHANGE IMAGES', value: 2}, {name:'ADD BUTTONS', value: 3}, {name:'RESET SYSTEM', value: 4}, {name:'RELOAD ASSETS LIST', value: 5}, { name: "", disabled: true },{name:'RETURN', value: 6}])
+    selection = await input.select(" \nSETTINGS\n \n \nChoose one of the options below:",[{name:'CHANGE TEXTS', value: 1}, {name:'CHANGE IMAGES', value: 2}, {name:'ADD BUTTONS', value: 3}, {name:'RESET SYSTEM', value: 4}, {name:'RELOAD ASSETS LIST', value: 5}, { name: "", disabled: true },{name:'RETURN AND SAVE', value: 6},{name:'RETURN WITHOUT SAVING', value: 7}])
     switch (selection) {
         case 1:
             texts()
             break
         case 2:
-            // images()
+            images()
             break
         case 3:
-            // buttons()
+            buttons()
             break
         case 4:
-            // reset()
+            reset()
             break
         case 5:
-            // reload()
+            reload()
             break
-        default:
+        case 6:
             fs.writeFileSync('./config.json', JSON.stringify(cfg,null,3), (err) => {if (err) console.log('Error writing file:', err)})
             console.log(cfg)
             menu()
             break
+        default:
+            cfg = JSON.parse(fs.readFileSync('config.json', 'utf8'))
+            menu()
     }
 }
 
 async function texts(){
     console.clear()
-    let selection = await input.select(" \nTEXTS\n \n \nChoose one of the options below:",[{name:`STATE: ${cfg.state}`, value: 1}, {name:`DETAILS: ${cfg.details}`, value: 2}, {name:`LARGE IMAGE TEXT: ${cfg.lgtext}`, value: 3}, {name:`SMALL IMAGE TEXT: ${cfg.smtext}`, value: 4}, { name: "", disabled: true },{name:'RETURN', value: 5}])
+    selection = await input.select(" \nTEXTS\n \n \nChoose one of the options below:",[{name:`STATE: ${cfg.state}`, value: 1}, {name:`DETAILS: ${cfg.details}`, value: 2}, {name:`LARGE IMAGE TEXT: ${cfg.lgtext}`, value: 3}, {name:`SMALL IMAGE TEXT: ${cfg.smtext}`, value: 4}, { name: "", disabled: true },{name:'RETURN', value: 5}])
     switch (selection) {
         case 1:
             selection = await input.text(`To return press enter\n \nOLD State: ${cfg.state}\n \nNEW State: `).catch(console.error)
@@ -163,6 +167,139 @@ async function texts(){
         default:
             settings()
             break
+    }
+}
+
+async function images(){
+    console.clear()
+    selection = await input.select(" \nTEXTS\n \n \nChoose one of the options below:",[{name:`LARGE IMAGE: ${cfg.lgimage}`, value: 1}, {name:`SMALL IMAGE: ${cfg.smimage}`, value: 2}, { name: "", disabled: true },{name:'RETURN', value: 3}])
+    switch (selection) {
+        case 1:
+            console.clear()
+
+            console.log("Assets List")
+            console.table(cfg.assets)
+            selection = await input.text(`To return press enter\n \nOLD Large Image: ${cfg.lgtext}\n \nNEW Large Image: `).catch(console.error)
+            if (selection){
+                cfg.lgimage = selection
+                images()
+                break
+            }
+            else{
+                images()
+                break
+            }
+        case 2:
+            console.clear()
+
+            console.log("Assets List")
+            console.table(cfg.assets)
+            selection = await input.text(`To return press enter\n \nOLD Small Image: ${cfg.smtext}\n \nNEW Small Image: `).catch(console.error)
+            if (selection){
+                cfg.smimage = selection
+                images()
+                break
+            }
+            else{
+                images()
+                break
+            }
+        default:
+            settings()
+            break
+    }
+}
+
+async function buttons(){
+    console.clear()
+    
+    console.table(cfg.bttns)
+    selection = await input.select(" \nBUTTONS\n \n \nChoose one of the options below:",[{name:'BUTTON 1', value: 1}, {name:'BUTTON 2', value: 2}, { name: "", disabled: true },{name:'RETURN', value: 3}])
+
+    switch (selection) {
+        case 1:
+            console.clear()
+
+            console.log("BUTTON 1")
+            selection = await input.text(`To return press enter\nTo delete the button press SPACEBAR and ENTER\n \nOLD LABEL: ${cfg.bttns[0].label}\nOLD URL: ${cfg.bttns[0].url}\nNEW LABEL: `).catch(console.error)
+            if (selection && selection != " "){
+                cfg.bttns[0].label = selection
+                selection = await input.text(`NEW URL: `).catch(console.error)
+                cfg.bttns[0].url = selection
+                buttons()
+                break
+            }
+            else if (selection == " "){
+                cfg.bttns[0].label = null
+                cfg.bttns[0].url = null
+            }
+            else{
+                buttons()
+                break
+            }
+        case 2:
+            console.clear()
+
+            console.log("BUTTON 2")
+            selection = await input.text(`To return press enter\nTo delete the button press SPACEBAR and ENTER\n \nOLD LABEL: ${cfg.bttns[1].label}\nOLD URL: ${cfg.bttns[1].url}\nNEW LABEL: `).catch(console.error)
+            if (selection && selection != " "){
+                cfg.bttns[1].label = selection
+                selection = await input.text(`NEW URL: `).catch(console.error)
+                cfg.bttns[1].url = selection
+                buttons()
+                break
+            }
+            else if (selection == " "){
+                cfg.bttns[1].label = null
+                cfg.bttns[1].url = null
+            }
+            else{
+                buttons()
+                break
+            }
+        default:
+            settings()
+            break
+    }
+}
+
+async function reload(){
+    console.clear()
+    console.log("Reloading assets!")
+    
+    // Fetch assets list
+    await fetch(`https://discordapp.com/api/oauth2/applications/${cfg.cid}/assets`, {method:"GET"})
+        .then(res =>res.json())
+        .then(json => {fetchedAssets = json})
+    
+    // Filter json to get asset names only
+    fetchedAssets.forEach((asset) => {cfg.assets.push(asset.name)})
+    
+    // Update assets list
+    fs.writeFileSync('./config.json', JSON.stringify(cfg,null,3), (err) => {if (err) console.log('Error writing file:', err)})
+    
+}
+
+async function reset(){
+    selection = await input.confirm("RESET SETTINGS\n \nAre you certain?")
+    if(selection){
+        console.clear()
+
+        console.log("Resetting the system...")
+
+        await fetch("https://raw.githubusercontent.com/YamanduGermano/ProRPC/main/config.json", {method:"GET"})
+            .then(res=>res.json())
+            .then(json=>{
+                cfg = json
+                fs.writeFileSync('./config.json', JSON.stringify(cfg,null,3), (err) => {if (err) console.log('Error writing file:', err)})
+            })
+        
+        console.clear()
+        
+        menu()
+    }
+    else{
+        settings()
     }
 }
 
@@ -256,7 +393,7 @@ async function about(){
 async function menu(){
     // If ID is registered on system
     if (cfg.cid){
-        // console.clear()
+        console.clear()
         let selection = await input.select(" \nWelcome to ProRPC\n \n \nChoose one of the options below:",[{name:'RUN RPC', value: 1},{name:'SETTINGS', value: 2}, {name: 'ABOUT', value: 3}, {name: 'HELP', value: 4}, { name: "", disabled: true }, {name: 'EXIT', value: 5}])
         switch (selection) {
             case 1:

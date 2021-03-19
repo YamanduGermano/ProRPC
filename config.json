@@ -7,7 +7,16 @@
    "smimage": "ProRPC",
    "lgtext": "ProRPC",
    "smtext": "ProRPC",
-   "bttns": [{"label":"Button 1 - ProRPC", "url":"https://github.com/YamanduGermano/ProRPC"},{"label":"Button 2 - ProRPC", "url":"https://github.com/YamanduGermano/ProRPC"}],
+   "bttns": [
+      {
+         "label": "Button 1 - ProRPC",
+         "url": "https://github.com/YamanduGermano/ProRPC"
+      },
+      {
+         "label": "Button 2 - ProRPC",
+         "url": "https://github.com/YamanduGermano/ProRPC"
+      }
+   ],
    "timer": {
       "enabled": false,
       "time": 0,
