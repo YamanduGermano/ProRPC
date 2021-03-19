@@ -1,17 +1,17 @@
 {
-    "cid" : "",
-    "assets" : [],
-    "state" : "ProRPC",
-    "details" : "ProRPC",
-    "lgimage" : "ProRPC",
-    "smimage" : "ProRPC",
-    "lgtext" : "ProRPC",
-    "smtext" : "ProRPC",
-    "bttns" : {},
-    "timer" : {
-        "enabled" : false,
-        "time" : 0,
-        "lgimagelist" : [],
-        "smimagelist" : []
-    }
+   "cid": "",
+   "assets": [],
+   "state": "State - ProRPC",
+   "details": "Details - ProRPC",
+   "lgimage": "ProRPC",
+   "smimage": "ProRPC",
+   "lgtext": "ProRPC",
+   "smtext": "ProRPC",
+   "bttns": [{"label":"Button 1 - ProRPC", "url":"https://github.com/YamanduGermano/ProRPC"},{"label":"Button 2 - ProRPC", "url":"https://github.com/YamanduGermano/ProRPC"}],
+   "timer": {
+      "enabled": false,
+      "time": 0,
+      "lgimagelist": [],
+      "smimagelist": []
+   }
 }
