@@ -104,7 +104,7 @@ async function breakrpc(){
 
 async function settings(){
     console.clear()
-    selection = await input.select(" \nSETTINGS\n \n \nChoose one of the options below:",[{name:'CHANGE TEXTS', value: 1}, {name:'CHANGE IMAGES', value: 2}, {name:'ADD BUTTONS', value: 3}, {name:'RESET SYSTEM', value: 4}, {name:'RELOAD ASSETS LIST', value: 5}, { name: "", disabled: true },{name:'RETURN AND SAVE', value: 6},{name:'RETURN WITHOUT SAVING', value: 7}])
+    selection = await input.select(" \nSETTINGS\n \n \nChoose one of the options below:",[{name:'CHANGE TEXTS', value: 1}, {name:'CHANGE IMAGES', value: 2}, {name:'CHANGE BUTTONS', value: 3}, {name:'RESET SYSTEM', value: 4}, {name:'RELOAD ASSETS LIST', value: 5}, { name: "", disabled: true },{name:'RETURN AND SAVE', value: 6},{name:'RETURN WITHOUT SAVING', value: 7}])
     switch (selection) {
         case 1:
             texts()
@@ -213,14 +213,14 @@ async function images(){
 async function buttons(){
     console.clear()
     
+    console.log("ACTIVE BUTTONS")
     console.table(cfg.bttns)
-    selection = await input.select(" \nBUTTONS\n \n \nChoose one of the options below:",[{name:'BUTTON 1', value: 1}, {name:'BUTTON 2', value: 2}, { name: "", disabled: true },{name:'RETURN', value: 3}])
+    selection = await input.select("\n \nChoose one of the options below:",[{name:"BUTTON 1", value: 1}, {name:"BUTTON 2", value: 2, disabled:(((cfg.bttns).length)==1)? true : false}, { name: "", disabled: true }, {name:"ADD A BUTTON", value:3, disabled:(((cfg.bttns).length)==2)? true : false}, {name:'RETURN', value: 4}])
 
     switch (selection) {
         case 1:
             console.clear()
 
-            console.log("BUTTON 1")
             selection = await input.text(`To return press enter\nTo delete the button press SPACEBAR and ENTER\n \nOLD LABEL: ${cfg.bttns[0].label}\nOLD URL: ${cfg.bttns[0].url}\nNEW LABEL: `).catch(console.error)
             if (selection && selection != " "){
                 cfg.bttns[0].label = selection
@@ -230,8 +230,9 @@ async function buttons(){
                 break
             }
             else if (selection == " "){
-                cfg.bttns[0].label = null
-                cfg.bttns[0].url = null
+                cfg.bttns.splice(0,1)
+                buttons()
+                break
             }
             else{
                 buttons()
@@ -240,8 +241,7 @@ async function buttons(){
         case 2:
             console.clear()
 
-            console.log("BUTTON 2")
-            selection = await input.text(`To return press enter\nTo delete the button press SPACEBAR and ENTER\n \nOLD LABEL: ${cfg.bttns[1].label}\nOLD URL: ${cfg.bttns[1].url}\nNEW LABEL: `).catch(console.error)
+            selection = await input.text(`To return press enter\n \nOLD LABEL: ${cfg.bttns[1].label}\nOLD URL: ${cfg.bttns[1].url}\nNEW LABEL: `).catch(console.error)
             if (selection && selection != " "){
                 cfg.bttns[1].label = selection
                 selection = await input.text(`NEW URL: `).catch(console.error)
@@ -250,8 +250,24 @@ async function buttons(){
                 break
             }
             else if (selection == " "){
-                cfg.bttns[1].label = null
-                cfg.bttns[1].url = null
+                cfg.bttns.splice(1,1)
+                buttons()
+                break
+            }
+            else{
+                buttons()
+                break
+            }
+        case 3:
+            console.clear()
+
+            selection = await input.text(`To return press enter\n \nBUTTON LABEL: `).catch(console.error)
+            if (selection && selection != " "){
+                
+                let selection2 = await input.text(`BUTTON URL: `).catch(console.error)
+                cfg.bttns.push({"label":selection, "url":selection2})
+                buttons()
+                break
             }
             else{
                 buttons()
