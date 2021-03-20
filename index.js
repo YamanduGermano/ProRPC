@@ -184,7 +184,7 @@ async function images(){
 
             console.log("Assets List")
             console.table(cfg.assets)
-            userinput = await input.text(`To return press enter\n \nOLD Large Image: ${cfg.lgtext}\n \nNEW Large Image: `).catch(console.error)
+            userinput = await input.text(`To return press enter\n \nOLD Large Image: ${cfg.lgimage}\n \nNEW Large Image: `).catch(console.error)
             if (userinput){
                 cfg.lgimage = userinput
                 images()
@@ -199,7 +199,7 @@ async function images(){
 
             console.log("Assets List")
             console.table(cfg.assets)
-            userinput = await input.text(`To return press enter\n \nOLD Small Image: ${cfg.smtext}\n \nNEW Small Image: `).catch(console.error)
+            userinput = await input.text(`To return press enter\n \nOLD Small Image: ${cfg.smimage}\n \nNEW Small Image: `).catch(console.error)
             if (userinput){
                 cfg.smimage = userinput
                 images()
