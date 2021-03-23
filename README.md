@@ -1,2 +1,48 @@
 # ProRPC
- Advanced Discord Rich Presence
+
+![Yes, the logo is a leaf.](https://user-images.githubusercontent.com/63875673/112144546-21aa8a00-8bb8-11eb-8309-6fcc17e8be03.png)
+
+```ProRPC, an advanced Discord rich presence client```
+
+![RichPresence Example](https://user-images.githubusercontent.com/63875673/112144168-9b8e4380-8bb7-11eb-8729-6988dde0b5c3.png)
+
+
+
+## CLI
+![Command Line Interface](https://user-images.githubusercontent.com/63875673/112143406-95e42e00-8bb6-11eb-95f4-dced0296374b.png)
+You can easily change assets, texts and buttons from your Rich Presence using the CLI
+
+
+
+## Asset List
+![Assets!](https://user-images.githubusercontent.com/63875673/112143638-eeb3c680-8bb6-11eb-8b84-1b7bf9c4e15a.png)
+ProRPC gets the asset list from your aplicattion to help you choose the images
+
+
+# How to use
+
+![Discord Developers page](https://user-images.githubusercontent.com/63875673/112144914-79e18c00-8bb8-11eb-8c0a-3f148daeb95b.png)
+```
+1 - Go to Discord Developers PAGE and create an Aplication
+```
+
+![Client ID](https://user-images.githubusercontent.com/63875673/112146305-2cfeb500-8bba-11eb-99c0-e359192c074f.png)
+```
+2 - Get its ClientID
+```
+
+![Art Assets](https://user-images.githubusercontent.com/63875673/112146465-5c152680-8bba-11eb-8594-18d1af558cbc.png)
+```
+3 - Upload Art assets
+```
+
+![Paste your ClientID](https://user-images.githubusercontent.com/63875673/112146724-ad251a80-8bba-11eb-9843-08648873d882.png)
+```
+4 - Customize it!
+```
+
+![Default Config](https://user-images.githubusercontent.com/63875673/112146923-e2ca0380-8bba-11eb-819f-c01afb7102f8.png)
+
+# INSTALL
+
+> [CLICK here to **install** PRORPC](https://github.com/YamanduGermano/ProRPC/tree/main/Versions)
