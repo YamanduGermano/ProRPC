@@ -3,7 +3,7 @@
 ## ProRPC, an advanced Discord rich presence client
 
 ![Yes, the logo is a leaf.](https://user-images.githubusercontent.com/63875673/112149568-e612be80-8bbd-11eb-8f39-0faa2b55008c.png)
-## [CLICK here to **install** PRORPC](https://github.com/YamanduGermano/ProRPC/tree/main/Versions)
+### [CLICK here to **install** PRORPC](https://github.com/YamanduGermano/ProRPC/tree/main/Versions)
 
 
 ![RichPresence Example](https://user-images.githubusercontent.com/63875673/112144168-9b8e4380-8bb7-11eb-8729-6988dde0b5c3.png)
