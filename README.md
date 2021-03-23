@@ -1,9 +1,8 @@
 # ProRPC
 
-> **ProRPC, an advanced Discord rich presence client**
+## ProRPC, an advanced Discord rich presence client
 
 ![Yes, the logo is a leaf.](https://user-images.githubusercontent.com/63875673/112149568-e612be80-8bbd-11eb-8f39-0faa2b55008c.png)
-
 
 ![RichPresence Example](https://user-images.githubusercontent.com/63875673/112144168-9b8e4380-8bb7-11eb-8729-6988dde0b5c3.png)
 
@@ -13,14 +12,14 @@
 ## CLI
 ![Command Line Interface](https://user-images.githubusercontent.com/63875673/112143406-95e42e00-8bb6-11eb-95f4-dced0296374b.png)
 
-You can easily change assets, texts and buttons from your Rich Presence using the CLI
+**You can easily change assets, texts and buttons from your Rich Presence using the CLI**
 
 
 
 ## Asset List
 ![Assets!](https://user-images.githubusercontent.com/63875673/112143638-eeb3c680-8bb6-11eb-8b84-1b7bf9c4e15a.png)
 
-ProRPC gets the asset list from your aplicattion to help you choose the images
+**ProRPC gets the asset list from your aplicattion to help you choose the images**
 
 
 # How to use
@@ -31,10 +30,12 @@ ProRPC gets the asset list from your aplicattion to help you choose the images
 ```
 
 
+
 ![Client ID](https://user-images.githubusercontent.com/63875673/112146305-2cfeb500-8bba-11eb-99c0-e359192c074f.png)
 ```
 2 - Get its ClientID
 ```
+
 
 
 ![Art Assets](https://user-images.githubusercontent.com/63875673/112146465-5c152680-8bba-11eb-8594-18d1af558cbc.png)
@@ -43,10 +44,12 @@ ProRPC gets the asset list from your aplicattion to help you choose the images
 ```
 
 
+
 ![Paste your ClientID](https://user-images.githubusercontent.com/63875673/112146724-ad251a80-8bba-11eb-9843-08648873d882.png)
 ```
 4 - Customize it!
 ```
+
 
 
 ![Default Config](https://user-images.githubusercontent.com/63875673/112146923-e2ca0380-8bba-11eb-819f-c01afb7102f8.png)
