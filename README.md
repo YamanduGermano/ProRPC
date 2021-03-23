@@ -1,21 +1,25 @@
 # ProRPC
 
-![Yes, the logo is a leaf.](https://user-images.githubusercontent.com/63875673/112144546-21aa8a00-8bb8-11eb-8309-6fcc17e8be03.png)
+> **ProRPC, an advanced Discord rich presence client**
 
-```ProRPC, an advanced Discord rich presence client```
+![Yes, the logo is a leaf.](https://user-images.githubusercontent.com/63875673/112149568-e612be80-8bbd-11eb-8f39-0faa2b55008c.png)
+
 
 ![RichPresence Example](https://user-images.githubusercontent.com/63875673/112144168-9b8e4380-8bb7-11eb-8729-6988dde0b5c3.png)
 
 
 
+
 ## CLI
 ![Command Line Interface](https://user-images.githubusercontent.com/63875673/112143406-95e42e00-8bb6-11eb-95f4-dced0296374b.png)
+
 You can easily change assets, texts and buttons from your Rich Presence using the CLI
 
 
 
 ## Asset List
 ![Assets!](https://user-images.githubusercontent.com/63875673/112143638-eeb3c680-8bb6-11eb-8b84-1b7bf9c4e15a.png)
+
 ProRPC gets the asset list from your aplicattion to help you choose the images
 
 
