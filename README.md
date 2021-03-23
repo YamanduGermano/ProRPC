@@ -34,7 +34,7 @@ ___
 
 ![Discord Developers page](https://user-images.githubusercontent.com/63875673/112144914-79e18c00-8bb8-11eb-8c0a-3f148daeb95b.png)
 
-![Developers Page](https://discord.com/developers/applications)
+[Developers Page](https://discord.com/developers/applications)
 
 
 ### 2 - Get its ClientID
