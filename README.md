@@ -30,20 +30,24 @@ ProRPC gets the asset list from your aplicattion to help you choose the images
 1 - Go to Discord Developers PAGE and create an Aplication
 ```
 
+
 ![Client ID](https://user-images.githubusercontent.com/63875673/112146305-2cfeb500-8bba-11eb-99c0-e359192c074f.png)
 ```
 2 - Get its ClientID
 ```
+
 
 ![Art Assets](https://user-images.githubusercontent.com/63875673/112146465-5c152680-8bba-11eb-8594-18d1af558cbc.png)
 ```
 3 - Upload Art assets
 ```
 
+
 ![Paste your ClientID](https://user-images.githubusercontent.com/63875673/112146724-ad251a80-8bba-11eb-9843-08648873d882.png)
 ```
 4 - Customize it!
 ```
+
 
 ![Default Config](https://user-images.githubusercontent.com/63875673/112146923-e2ca0380-8bba-11eb-819f-c01afb7102f8.png)
 
