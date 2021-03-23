@@ -30,7 +30,7 @@
 
 ![Discord Developers page](https://user-images.githubusercontent.com/63875673/112144914-79e18c00-8bb8-11eb-8c0a-3f148daeb95b.png)
 ```
-1 - Go to Discord Developers PAGE and create an Aplication
+1 - Go to [Discord Developers PAGE](https://discord.com/developers/applications) and create an Aplication
 ```
 
 
