@@ -7,6 +7,8 @@
 
 ### [CLICK here to **install** PRORPC](https://github.com/YamanduGermano/ProRPC/tree/main/Versions)
 
+___
+
 
 ![RichPresence Example](https://user-images.githubusercontent.com/63875673/112144168-9b8e4380-8bb7-11eb-8729-6988dde0b5c3.png)
 
@@ -28,33 +30,27 @@
 
 # How to use
 
+### 1 - Go to Discord Developers Page and create an Aplication
+
 ![Discord Developers page](https://user-images.githubusercontent.com/63875673/112144914-79e18c00-8bb8-11eb-8c0a-3f148daeb95b.png)
-```
-1 - Go to Discord Developers Page and create an Aplication
-```
-[Here is a link](https://discord.com/developers/applications)
+
+![Developers Page](https://discord.com/developers/applications)
 
 
+### 2 - Get its ClientID
 
 ![Client ID](https://user-images.githubusercontent.com/63875673/112146305-2cfeb500-8bba-11eb-99c0-e359192c074f.png)
-```
-2 - Get its ClientID
-```
 
 
+### 3 - Upload Art assets
 
 ![Art Assets](https://user-images.githubusercontent.com/63875673/112146465-5c152680-8bba-11eb-8594-18d1af558cbc.png)
-```
-3 - Upload Art assets
-```
 
-
-
+### 4 - Customize it!
 ![Paste your ClientID](https://user-images.githubusercontent.com/63875673/112146724-ad251a80-8bba-11eb-9843-08648873d882.png)
-```
-4 - Customize it!
-```
 
+
+___
 
 
 ![Default Config](https://user-images.githubusercontent.com/63875673/112146923-e2ca0380-8bba-11eb-819f-c01afb7102f8.png)
